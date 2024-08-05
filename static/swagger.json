@@ -99,7 +99,66 @@
           "format": "float"
         },
         "Zip Codes": {
+          "type": "number"
+        },
+        "Approved": {
+          "type": "string"
+        },
+        "ExpirationDate": {
+          "type": "string"
+        },
+        "Fire Prevention Districts": {
+          "type": "number"
+        },
+        "NOISent": {
+          "type": "string"
+        },
+        "Neighborhoods (old)": {
+          "type": "number"
+        },
+        "Police Districts": {
+          "type": "number"
+        },
+        "PriorPermit": {
           "type": "integer"
+        },
+        "Received": {
+          "type": "integer"
+        },
+        "Schedule": {
+          "type": "string"
+        },
+        "Supervisor Districts": {
+          "type": "number"
+        },
+        "X": {
+          "type": "number",
+          "format": "float"
+        },
+        "Y": {
+          "type": "number",
+          "format": "float"
+        },
+        "block": {
+          "type": "string"
+        },
+        "blocklot": {
+          "type": "string"
+        },
+        "cnn": {
+          "type": "integer"
+        },
+        "dayshours": {
+          "type": "string"
+        },
+        "lot": {
+          "type": "string"
+        },
+        "permit": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
         }
       }
     }
