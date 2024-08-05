@@ -1,0 +1,107 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Food Truck API",
+    "description": "API for managing and querying food trucks data in San Francisco"
+  },
+  "host": "127.0.0.1:5000",
+  "basePath": "/api",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/food-trucks/list": {
+      "get": {
+        "summary": "List all food trucks with optional filtering",
+        "description": "Returns a list of food trucks with optional filtering based on query parameters.",
+        "parameters": [
+          {
+            "name": "Zip_Codes",
+            "in": "query",
+            "description": "Filter by Zip Codes",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "Status",
+            "in": "query",
+            "description": "Filter by Status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "Applicant",
+            "in": "query",
+            "description": "Filter by Applicant",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "Facility_Type",
+            "in": "query",
+            "description": "Filter by Facility Type",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of food trucks",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/FoodTruck"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid filtering parameter"
+          },
+          "500": {
+            "description": "An error occurred while processing the request"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "FoodTruck": {
+      "type": "object",
+      "properties": {
+        "locationid": {
+          "type": "integer"
+        },
+        "Applicant": {
+          "type": "string"
+        },
+        "FacilityType": {
+          "type": "string"
+        },
+        "LocationDescription": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "Status": {
+          "type": "string"
+        },
+        "FoodItems": {
+          "type": "string"
+        },
+        "Latitude": {
+          "type": "number",
+          "format": "float"
+        },
+        "Longitude": {
+          "type": "number",
+          "format": "float"
+        },
+        "Zip Codes": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
