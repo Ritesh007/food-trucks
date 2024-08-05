@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Francisco Food Trucks</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css"> <!--Bootstrap framework-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"> <!--DataTables CSS-->
+</head>
+<body>
+    <header class="bg-dark text-white text-center py-3">
+        <h1>San Francisco Food Trucks</h1>
+        <a href="/swagger" class="btn btn-info mt-2">API Doc</a>
+    </header>
+    <main class="container mt-4">
+        <section class="filters mb-4">
+            <h2>Filters</h2>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="zipcode-filter">Zip Codes:</label>
+                    <select id="zipcode-filter" class="form-control">
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="status-filter">Status:</label>
+                    <select id="status-filter" class="form-control">
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="applicant-filter">Applicant:</label>
+                    <select id="applicant-filter" class="form-control">
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="facility-type-filter">Facility Type:</label>
+                    <select id="facility-type-filter" class="form-control">
+                    </select>
+                </div>
+            </div>
+            <button id="clear-filters" class="btn btn-secondary">Clear Selection</button>
+        </section>
+        <section class="data-table">
+            <h2>Food Trucks</h2>
+            <div class="table-responsive">
+                <table id="food-trucks-table" class="table table-striped table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Location ID</th>
+                            <th>Applicant</th>
+                            <th>Facility Type</th>
+                            <th>Zip Code</th>
+                            <th>Status</th>
+                            <th>Food Items</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> jQuery
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script> <!--DataTables JavaScript for pagination, instant search, and multi-column ordering to HTML tables-->
+    <script src="../static/script.js"></script>
+</body>
+</html>
