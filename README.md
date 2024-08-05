@@ -85,9 +85,6 @@ Instead of using a CSV file, move the data to a robust database for better perfo
 ## Disaster recovery
 Utilize AWS RDS automated backups and snapshots to quickly restore the database in case of a failure.
 
-## Alerting for Failures
-Implement an alerting mechanism to notify the team of any failures in the CI pipeline, backend errors, or frontend issues. This can be achieved using the following:
-
-    - GitHub Actions: Configure alerts for failed CI workflows to notify via email or messaging platforms.
-    - AWS CloudWatch: Monitor Lambda functions and API Gateway for errors and set up alerts to notify via SNS (Simple Notification Service).
-    - S3 Events: Configure S3 to trigger Lambda functions for certain events (e.g., upload failures) and send notifications.
+## Monitoring
+- Setup monitoring such as: availability, Performance, Error tracking, Resource utilization, Traffic.
+- Implement an alerting mechanism to notify the team of any failures in the CI pipeline, backend errors, or frontend issues.
