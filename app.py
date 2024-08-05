@@ -63,12 +63,20 @@ def get_food_trucks():
             column_name = column_mapping.get(key, None)
             if column_name is None:
                 return jsonify({'error': f"Invalid filtering parameter: {key}"}), 400
-            filtered_df = filtered_df[filtered_df[column_name].astype(str) == value] # return only rows where the boolean Series is True.
+            
+            # Handle special case for Zip Codes
+            if column_name == 'Zip Codes':
+                value = float(value) if '.' in value else int(value)
+                filtered_df = filtered_df[filtered_df[column_name] == value]
+            else:
+                filtered_df = filtered_df[filtered_df[column_name].astype(str) == str(value)]
+        
         # Convert NaN to empty strings and return the filtered data
         data = filtered_df.applymap(nan_to_empty).to_dict(orient='records')
         return jsonify(data)
     except Exception as e:
         return jsonify({'error': f"An error occurred while processing the request: {e}"}), 500
+
 
 
 if __name__ == '__main__':
