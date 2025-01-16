@@ -88,3 +88,4 @@ Utilize AWS RDS automated backups and snapshots to quickly restore the database 
 ## Monitoring
 - Setup monitoring such as: availability, Performance, Error tracking, Resource utilization, Traffic.
 - Implement an alerting mechanism to notify the team of any failures in the CI pipeline, backend errors, or frontend issues.
+- 
